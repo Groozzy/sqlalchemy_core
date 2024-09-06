@@ -138,7 +138,6 @@ def delete_post_by_id(post_id):
 def count_posts_by_category(category_id):
     with sync_engine.connect() as conn:
         statement = (
-            select(func.count("*"))
-            .where(posts.c.category_id == category_id)
+            select(func.count("*")).where(posts.c.category_id == category_id)
         )
         return conn.execute(statement).scalar()

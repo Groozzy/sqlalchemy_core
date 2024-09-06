@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.orm import sessionmaker
 
 from settings import Settings
 
@@ -19,3 +20,5 @@ async_engine = create_async_engine(
     pool_size=5,
     max_overflow=5
 )
+
+Session = sessionmaker(bind=sync_engine)
