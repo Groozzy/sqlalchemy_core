@@ -5,6 +5,9 @@ from sqlalchemy import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from sqlalchemy.orm import registry
+
+mapper_registry = registry()
 
 # Declarative
 
